@@ -7,6 +7,33 @@
   --size-border-radius: 0.5rem;
 }
 
+:root.dark {
+  --color-bg2: #262626;
+  --size-border-radius: 0.5rem;
+  --color-primary-50: #171717;
+  --color-primary-100: #202529;
+  --color-primary-200: #383838;
+  --color-primary-300: #434343;
+  --color-primary-400: #515151;
+  --color-primary-500: #666666;
+  --color-primary-600: #818181;
+  --color-primary-700: #a4a4a4;
+  --color-primary-800: #c8c8c8;
+  --color-primary-900: #e3e3e3;
+  --color-primary-950: #f7f7f7;
+
+  --color-primary: var(--color-primary-900);
+  --color-primary-soft: rgb(from var(--color-primary) r g b / 0.1);
+
+  --color-gray-light: var(--color-neutral-800);
+  --color-gray: var(--color-neutral-400);
+  --color-gray-dark: var(--color-neutral-200);
+
+  --color-bg: #171717;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-border-light: #333333;
+}
+
 @theme {
   --font-serif: "Noto Serif CJK", ui-serif, serif;
   /* 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' */
@@ -62,23 +89,20 @@
   --color-secondary-900: #263654;
   --color-secondary-950: #192338; */
 
-  --color-primary-50: #fff0fc;
-  --color-primary-100: #ffe3fc;
-  --color-primary-200: #ffc7f9;
-  --color-primary-300: #ff99f2;
-  --color-primary-400: #ff5ae7;
-  --color-primary-500: #ff2ad6;
-  --color-primary-600: #fc06ba;
-  --color-primary-700: #dc0097;
-  --color-primary-800: #b5007c;
-  --color-primary-900: #82045b;
-  /* --color-primary-900: rgb(130, 4, 91); */
-  --color-primary-950: #5d003c;
+  --color-primary-50: #f7f7f7;
+  --color-primary-100: #e3e3e3;
+  --color-primary-200: #c8c8c8;
+  --color-primary-300: #a4a4a4;
+  --color-primary-400: #818181;
+  --color-primary-500: #666666;
+  --color-primary-600: #515151;
+  --color-primary-700: #434343;
+  --color-primary-800: #383838;
+  --color-primary-900: #202529;
+  --color-primary-950: #171717;
 
   --color-primary: var(--color-primary-900);
-  /* --color-primary: hsl(318.57, 94.03%, 26.27%); */
-  /* --color-primary-soft: hsl(318.57 94.03% 26.27% / 15%); */
-  --color-primary-soft: rgb(from var(--color-primary) r g b / 0.15);
+  --color-primary-soft: rgb(from var(--color-primary) r g b / 0.1);
 
   --color-gray-light: var(--color-gray-100);
   --color-gray: var(--color-neutral-600);
@@ -112,8 +136,8 @@
 
   body {
     font-family: var(--font-sans-serif);
-    /* color: #222; */
-    /* background-color: #f9f9f9; */
+    color: var(--color-gray-dark);
+    background-color: var(--color-bg);
     padding: 0 32px;
   }
 
@@ -127,11 +151,11 @@
   h3,
   h4 {
     margin: 1rem 0;
-    /* color: var(--color-primary); */
+    color: var(--color-gray-dark);
     font-weight: bold;
     font-family: var(--font-serif);
     padding-bottom: 8px;
-    border-bottom: 1px solid #f2f3f4;
+    border-bottom: 1px solid var(--color-border-light);
   }
 
   h1 {
@@ -199,7 +223,7 @@
     left: -12px;
     height: calc(100% - 30px);
     content: "";
-    border-left: 2px solid #dfe0e1;
+    border-left: 2px solid var(--color-border-light);
   }
 
   /* li::marker {
@@ -281,21 +305,43 @@
 
   table {
     width: 100%;
-    display: table;
+    max-width: 100%;
+    display: block;
+    overflow-x: auto;
     border-collapse: collapse;
+    white-space: nowrap;
     /*border-spacing: 0px;*/
     /*margin: 0px 0px 20px;*/
   }
 
   table tr th,
   table tr td {
-    border: 1px solid #d9dfe4;
-    padding: 5px 10px;
-    text-align: justify;
+    border: 1px solid var(--color-border-light);
+    padding: 10px 14px;
+    text-align: left;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.6;
   }
 
   table tr th {
     font-weight: bold;
+    background-color: var(--color-bg2);
+  }
+
+  /* 宽屏时向左延伸，利用空白区域提供更宽的表格视野 */
+  @media (min-width: 1280px) {
+    table {
+      width: calc(100% + 140px);
+      margin-left: -140px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    table {
+      width: calc(100% + 220px);
+      margin-left: -220px;
+    }
   }
 
   /* 按钮 */
@@ -360,12 +406,9 @@
   padding: 0.5em;
   display: block;
   cursor: pointer;
-  background: #fff;
   background: var(--color-bg);
   border-radius: 0.25em;
-  /*border-radius: var(--radius);*/
-  border: 1px solid #eee;
-  /*border-color: var(--border);*/
+  border: 1px solid var(--color-border-light);
   transform: translateX(5em);
   transition:
     color 0.3s,
@@ -393,7 +436,7 @@
 /*导航栏*/
 
 #navigation a {
-  color: black;
+  color: var(--color-gray-dark);
   font-weight: bold;
   text-decoration: none;
 }
@@ -410,12 +453,15 @@
 .index-nav {
   padding: 10px;
   font-size: 1rem;
-  /* color: whitesmoke; */
-  /* background-color: var(--color-primary3); */
-  color: black;
-  background-color: whitesmoke;
+  color: var(--color-gray-dark);
+  background-color: var(--color-bg2);
   border-radius: 8px;
   text-decoration: none;
+  transition: all 0.2s;
+}
+
+.index-nav:hover {
+  background-color: var(--color-border-light);
 }
 
 /* icon  */
@@ -442,9 +488,7 @@
 /* 页码导航 */
 
 .pagination a {
-  color: #333;
-  /* font-size: 0.9375rem; */
-  /* font-size: 1.2rem; */
+  color: var(--color-gray-dark);
 }
 
 /* 首页文章卡片 */
@@ -452,8 +496,9 @@
 .index-post-card {
   animation: float-in 0.5s 0.05s backwards;
   border-radius: 0.8rem;
-  background-color: #fff;
-  box-shadow: 0 0.1em 0.2em var(--color-shadow);
+  background-color: var(--color-bg);
+  box-shadow: 0 0.1em 0.3em var(--color-shadow);
+  border: 1px solid var(--color-border-light);
   transition: all 0.2s;
   position: relative;
 }
@@ -503,23 +548,19 @@
 
 /* 目录 */
 #toc a {
-  /* color: #666; */
-  color: black;
+  color: var(--color-gray-dark);
   opacity: 0.6;
   transition: all 200ms ease-in-out;
-  /* 💡 This small transition makes setting of the active state smooth */
 }
 #toc a:hover {
-  /* color: #333; */
   opacity: 0.9;
 }
 #toc .active > a {
-  /* color: black; */
   opacity: 1;
   font-weight: 600;
+  color: var(--color-primary);
 }
 #toc .active {
-  /* color: black; */
   border-left-color: var(--color-primary);
   border-start-end-radius: 0.5rem;
   transition: all 200ms ease-in-out;
@@ -527,7 +568,7 @@
 
 #toc > div {
   padding: 0.2rem 0;
-  border-left: 3px solid #efefef;
+  border-left: 3px solid var(--color-border-light);
 }
 #toc .toc-item-level-1 {
   padding-left: 10px;

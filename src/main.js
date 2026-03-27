@@ -6,6 +6,17 @@ export * from "./upvote.js";
 export * from "./sponsor.js";
 export * from "./linkIcon.js";
 
+export function toggleTheme() {
+  if (document.documentElement.classList.contains("dark")) {
+    document.documentElement.classList.remove("dark");
+    localStorage.theme = "light";
+  } else {
+    document.documentElement.classList.add("dark");
+    localStorage.theme = "dark";
+  }
+}
+window.toggleTheme = toggleTheme;
+
 var to_top = function () {
   var btn = document.getElementsByClassName("to-top")[0];
   var scroll =

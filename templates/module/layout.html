@@ -6,6 +6,14 @@
 
   <title th:text="${title}"></title>
 
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
   <link
     rel="stylesheet"
     th:href="@{/assets/dist/main.css(v=${theme.spec.version})}"

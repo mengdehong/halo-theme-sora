@@ -21,6 +21,10 @@
       <a href="javascript:SearchWidget.open()">
         <span class="icon-[fa-solid--search] iconify-inline"></span>
       </a>
+      <a href="javascript:toggleTheme()" aria-label="Toggle Dark Mode">
+        <span class="icon-[fa-solid--moon] iconify-inline dark:hidden"></span>
+        <span class="icon-[fa-solid--sun] iconify-inline hidden dark:inline-block"></span>
+      </a>
       <a th:if="${theme.config.general.language}" href="/en">EN</a>
     </div>
   </nav>
