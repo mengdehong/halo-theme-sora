@@ -303,45 +303,31 @@
 
   /*表格*/
 
-  table {
+  .table-wrapper {
     width: 100%;
-    max-width: 100%;
-    display: block;
     overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  table {
+    width: max-content;
+    min-width: 60%;
     border-collapse: collapse;
-    white-space: nowrap;
-    /*border-spacing: 0px;*/
-    /*margin: 0px 0px 20px;*/
+    margin: 0 auto;
   }
 
   table tr th,
   table tr td {
     border: 1px solid var(--color-border-light);
-    padding: 10px 14px;
-    text-align: left;
-    white-space: normal;
-    word-break: break-word;
-    line-height: 1.6;
+    padding: 8px 14px;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.5;
   }
 
   table tr th {
     font-weight: bold;
     background-color: var(--color-bg2);
-  }
-
-  /* 宽屏时向左延伸，利用空白区域提供更宽的表格视野 */
-  @media (min-width: 1280px) {
-    table {
-      width: calc(100% + 140px);
-      margin-left: -140px;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    table {
-      width: calc(100% + 220px);
-      margin-left: -220px;
-    }
   }
 
   /* 按钮 */

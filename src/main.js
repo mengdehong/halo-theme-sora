@@ -34,20 +34,17 @@ window.addEventListener("scroll", to_top);
 
 // 使得外部链接在新窗口中打开
 document.addEventListener("DOMContentLoaded", () => {
-  /* // 获取所有链接
-  const links = document.querySelectorAll("a");
-
-  links.forEach((link) => {
-    // 判断是否为外部链接
-    if (link.href.startsWith("https://")) {
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener");
-    }
-  }); */
-
   document.querySelectorAll("a[href^='https://']").forEach((link) => {
     link.setAttribute("target", "_blank");
     link.setAttribute("rel", "noopener");
+  });
+
+  // 为文章内的表格添加横向滚动容器
+  document.querySelectorAll("#post-content table").forEach((table) => {
+    const wrapper = document.createElement("div");
+    wrapper.className = "table-wrapper";
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
   });
 });
 
