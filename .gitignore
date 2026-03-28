@@ -18,8 +18,7 @@ node_modules
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
 *.sw?
 
-templates/assets/dist
+templates/assets/built
 .halo2/

@@ -16,11 +16,11 @@
 
   <link
     rel="stylesheet"
-    th:href="@{/assets/dist/main.css(v=${theme.spec.version})}"
+    th:href="@{/assets/built/main.css(v=${theme.spec.version})}"
   />
   <!-- <link -->
   <!--   rel="stylesheet" -->
-  <!--   th:href="@{/assets/dist/main.css(v=${#strings.randomAlphanumeric(10)})}" -->
+  <!--   th:href="@{/assets/built/main.css(v=${#strings.randomAlphanumeric(10)})}" -->
   <!-- /> -->
   <!-- fonts -->
   <!-- HarmonyOS Sans SC -->
@@ -51,9 +51,9 @@
   />
 
   <script
-    th:src="@{/assets/dist/main.iife.js(v=${theme.spec.version})}"
+    th:src="@{/assets/built/main.iife.js(v=${theme.spec.version})}"
   ></script>
   <!-- <script
-    th:src="@{/assets/dist/main.iife.js(v=${#strings.randomAlphanumeric(10)})}"
+    th:src="@{/assets/built/main.iife.js(v=${#strings.randomAlphanumeric(10)})}"
   ></script> -->
 </head>
