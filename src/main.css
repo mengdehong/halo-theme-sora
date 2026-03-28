@@ -289,6 +289,107 @@
     white-space: pre-wrap;
   }
 
+  :root.dark pre,
+  :root.dark pre[class*="language-"] {
+    padding-top: 36px !important;
+    position: relative;
+    border: 1px solid #333333;
+    background-color: #202529 !important;
+    color: #abb2bf !important;
+    text-shadow: none !important;
+  }
+
+  :root.dark code,
+  :root.dark code[class*="language-"] {
+    background-color: transparent !important;
+    color: #abb2bf !important;
+    text-shadow: none !important;
+  }
+
+  /* OneDark highlight theme overrides for dark mode */
+  :root.dark .hljs-comment,
+  :root.dark .hljs-quote,
+  :root.dark .token.comment,
+  :root.dark .token.prolog,
+  :root.dark .token.doctype,
+  :root.dark .token.cdata {
+    color: #5c6370 !important;
+    font-style: italic !important;
+  }
+
+  :root.dark .token.punctuation,
+  :root.dark .hljs-punctuation {
+    color: #abb2bf !important;
+  }
+  
+  :root.dark .hljs-keyword,
+  :root.dark .hljs-selector-tag,
+  :root.dark .token.keyword,
+  :root.dark .token.atrule,
+  :root.dark .token.selector {
+    color: #c678dd !important;
+  }
+
+  :root.dark .hljs-string,
+  :root.dark .hljs-doctag,
+  :root.dark .token.string,
+  :root.dark .token.attr-value {
+    color: #98c379 !important;
+  }
+
+  :root.dark .hljs-title,
+  :root.dark .hljs-section,
+  :root.dark .token.function,
+  :root.dark .token.class-name {
+    color: #61afef !important;
+  }
+
+  :root.dark .hljs-variable,
+  :root.dark .hljs-template-variable,
+  :root.dark .hljs-attr,
+  :root.dark .hljs-attribute,
+  :root.dark .token.variable,
+  :root.dark .token.property,
+  :root.dark .token.attr-name {
+    color: #e06c75 !important;
+  }
+
+  :root.dark .hljs-number,
+  :root.dark .hljs-literal,
+  :root.dark .token.number,
+  :root.dark .token.boolean {
+    color: #d19a66 !important;
+  }
+
+  :root.dark .hljs-built_in,
+  :root.dark .token.builtin {
+    color: #e5c07b !important;
+  }
+
+  :root.dark .hljs-type,
+  :root.dark .token.type {
+    color: #d19a66 !important;
+  }
+
+  :root.dark .token.operator,
+  :root.dark .token.entity,
+  :root.dark .token.url {
+    color: #56b6c2 !important;
+  }
+
+  :root.dark pre::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fc625d;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    z-index: 2;
+  }
+
   /* pre > code {
     background-color: inherit;
   } */
@@ -319,10 +420,10 @@
   table tr th,
   table tr td {
     border: 1px solid var(--color-border-light);
-    padding: 8px 14px;
+    padding: 4px 14px;
     text-align: center;
     white-space: nowrap;
-    line-height: 1.5;
+    line-height: 1.4;
   }
 
   table tr th {

@@ -91,7 +91,7 @@
         <a
           th:each="post : ${posts.items}"
           th:href="@{${post.status.permalink}}"
-          class="index-post-card hover:shadow-card text-black transition duration-300"
+          class="index-post-card hover:shadow-card text-black dark:text-gray-200 transition duration-300"
         >
           <img
             th:if="${!#strings.isEmpty(post.spec.cover)}"
@@ -103,7 +103,7 @@
             <!-- 标题 -->
             <div
               th:text="${post.spec.title}"
-              class="textc-primary font-serif font-semibold"
+              class="textc-primary font-serif font-semibold dark:text-white"
               style="font-size: 1.2rem"
             ></div>
 
@@ -112,13 +112,13 @@
               th:if="${#strings.isEmpty(post.spec.cover)}"
               th:text="${post.status.excerpt != null and #strings.length(post.status.excerpt) > 150} ? ${#strings.substring(post.status.excerpt, 0, 150)} + '...' : ${post.status.excerpt}"
               style="font-size: 0.9rem"
-              class="text-gray"
+              class="text-gray dark:text-gray-300"
             ></div>
             <div
               th:if="${!#strings.isEmpty(post.spec.cover)}"
               th:text="${post.status.excerpt != null and #strings.length(post.status.excerpt) > 80} ? ${#strings.substring(post.status.excerpt, 0, 80)} + '...' : ${post.status.excerpt}"
               style="font-size: 0.9rem"
-              class="text-gray"
+              class="text-gray dark:text-gray-300"
             ></div>
 
             <!-- 元信息 -->

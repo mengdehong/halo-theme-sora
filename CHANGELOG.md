@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [Unreleased]
+
+### ✨ Features
+
+* **ui:** 添加现代化的深色模式主题及页面交互、文本颜色适配 ([95b11a4](https://github.com/Liksone/halo-theme-sora/commit/95b11a4), 包含本地修改)
+* **文章页:** 增大侧边栏文章目录(TOC)字体大小 (本地修改)
+
+### ♻️ Code Refactoring
+
+* **主题设计:** 更新主题资产、样式及配置文件 ([544bb9a](https://github.com/Liksone/halo-theme-sora/commit/544bb9a))
+* **文章页:** 移除多余的版权文章链接显示 (本地修改)
+* **构建:** 移除未使用的 vite.config.ts 配置文件 (本地修改)
+
+### 📝 Documentation
+
+* 更新项目 README 文档 ([d0056dd](https://github.com/Liksone/halo-theme-sora/commit/d0056dd))
+* 删除 docs 目录中未使用的截图资源 (本地修改)
+
 ## [0.5.17](https://github.com/Liksone/halo-theme-sora/compare/v0.5.16...v0.5.17) (2025-06-03)
 
 
